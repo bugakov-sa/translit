@@ -3,7 +3,7 @@
 Вывод программы:
 
 Collecting stat...
-Stat collected during 41365 millis
+Stat collected during 40607 millis
 Translating words...
 
 владимир
@@ -72,7 +72,7 @@ Translating words...
 
 йозеф
 [joseph]
-[жозеф]
+[жосеф]
 
 юрий
 [yury]
@@ -131,7 +131,7 @@ Translating words...
 [смит]
 
 святослав
-[swatoslav]
+[svatoslav]
 [святослав]
 
 сара
@@ -143,7 +143,7 @@ Translating words...
 [лариса]
 
 иннокентий
-[innocenti]
+[inenocenti]
 [иннокентий]
 
 фридрих
@@ -192,7 +192,7 @@ Translating words...
 
 джонсон
 [gonson]
-[жонсон]
+[гонсон]
 
 ли
 [ly]
@@ -207,7 +207,7 @@ Translating words...
 [густаво]
 
 гринспен
-[grinesspene]
+[grinesspen]
 [гринесспен]
 
 рафаэль
@@ -242,4 +242,20 @@ Translating words...
 [kim]
 [ким]
 
-59 words translated during 863 millis
+фробениус
+[frobenius]
+[фробенийус]
+
+евклид
+[jeffclid]
+[ьевклийд]
+
+пифагор
+[pifagor]
+[пифагор]
+
+моцарт
+[mocart]
+[мокарт]
+
+63 words translated during 1061 millis

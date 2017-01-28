@@ -6,6 +6,10 @@ import translit.Translit;
 
 import java.util.*;
 
+import static java.util.Collections.max;
+import static java.util.Collections.singletonList;
+import static translit.impl.Util.END_CHAR;
+
 public class DefaultConverter implements Converter {
 
     private final Stat stat;
@@ -17,35 +21,13 @@ public class DefaultConverter implements Converter {
     }
 
     public List<String> convert(String s) {
-        List<String> translations = Util.translations(s, translit);
-        List<Double> weights = new ArrayList<>();
-        for (String word : translations) {
-            weights.add(weight(word + Util.END_CHAR));
-        }
-        Double maxWeight = Collections.max(weights);
-        List<String> res = new ArrayList<>();
-        for (int i = 0; i < weights.size(); i++) {
-            if (weights.get(i).equals(maxWeight)) {
-                res.add(translations.get(i));
-            }
-        }
-        return res;
+        return singletonList(max(Util.translations(s, translit),
+                (o1, o2) -> weight(o1 + END_CHAR).compareTo(weight(o2 + END_CHAR))));
     }
 
     private Double weight(String tl) {
         final int c = 10;
-        switch (tl.length()) {
-            case 1:
-                return 0d;
-            case 2:
-                return 0d;
-            case 3:
-                return c * avgFreq(tl, 3) + avgFreq(tl, 2);
-            case 4:
-                return c * c * avgFreq(tl, 4) + c * avgFreq(tl, 3);
-            default:
-                return c * c * c * avgFreq(tl, 5) + c * c * avgFreq(tl, 4) + c * avgFreq(tl, 3);
-        }
+        return c * c * c * avgFreq(tl, 5) + c * c * avgFreq(tl, 4) + c * avgFreq(tl, 3) + avgFreq(tl, 2);
     }
 
     private Double avgFreq(String tl, int seqLength) {
