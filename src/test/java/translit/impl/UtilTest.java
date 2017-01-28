@@ -8,25 +8,6 @@ import java.util.*;
 
 public class UtilTest {
 
-    private void testFragmentations(String expected, String word) {
-        Assert.assertEquals(expected, Util.fragmentations(word).toString());
-    }
-
-    @Test
-    public void testFragmentations1() {
-        testFragmentations("[[a]]", "a");
-    }
-
-    @Test
-    public void testFragmentations2() {
-        testFragmentations("[[a, b], [ab]]", "ab");
-    }
-
-    @Test
-    public void testFragmentations3() {
-        testFragmentations("[[a, b, c], [a, bc], [ab, c], [abc]]", "abc");
-    }
-
     private final Translit translit = new Translit() {
         Map<String, List<String>> map = new HashMap<>();
         {

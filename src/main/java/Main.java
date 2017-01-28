@@ -2,10 +2,7 @@ import translit.Converter;
 import translit.ConverterFactory;
 import translit.StatFactory;
 import translit.TranslitFactory;
-import translit.impl.DefaultConverterFactory;
-import translit.impl.FromFileStatFactory;
-import translit.impl.FromFileTranslitFactory;
-import translit.impl.ReverseFromFileTranslitFactory;
+import translit.impl.*;
 
 import java.nio.file.Paths;
 import java.util.List;
@@ -13,17 +10,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception {
         final long startMillis = System.currentTimeMillis();
-        StatFactory statFactory = new FromFileStatFactory(Paths.get(
+        StatFactory statFactory = new SeqStatFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
                 "names.stats"
-        ));
-        TranslitFactory translitFactory = new FromFileTranslitFactory(Paths.get(
+        ), 5);
+        TranslitFactory translitFactory = new DefaultTranslitFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
                 "translit.txt"
         ));
-        TranslitFactory reverseTranslitFactory = new ReverseFromFileTranslitFactory(Paths.get(
+        TranslitFactory reverseTranslitFactory = new ReverseTranslitFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
                 "translit.txt"
@@ -39,6 +36,8 @@ public class Main {
         );
         Converter reverseConverter = reverseConverterFactory.create();
 
+        System.out.println("Stat collected during " + (System.currentTimeMillis() - startMillis) + " millis");
+        final long startMillis2 = System.currentTimeMillis();
         String[] words = {
             "владимир",
                 "алексей",
@@ -69,7 +68,31 @@ public class Main {
                 "петров",
                 "достоевский",
                 "пушкин",
-                "рюрикович"
+                "рюрикович",
+                "смит",
+                "святослав",
+                "сара",
+                "лариса",
+                "иннокентий",
+                "фридрих",
+                "хайзенберг",
+                "сэм",
+                "курт",
+                "робин",
+                "жанна",
+                "бернанке",
+                "толстой",
+                "тухачевский",
+                "гудериан",
+                "берия",
+                "джонсон",
+                "ли",
+                "флин",
+                "густаво",
+                "гринспен",
+                "рафаэль",
+                "отто",
+                "кольт"
         };
         for(String word : words) {
             List<String> list = converter.convert(word);
@@ -80,6 +103,7 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.println("Total millis: " + (System.currentTimeMillis() - startMillis));
+        long convertionMillis = (System.currentTimeMillis() - startMillis2);
+        System.out.println(words.length + " converted during " + convertionMillis + " millis");
     }
 }

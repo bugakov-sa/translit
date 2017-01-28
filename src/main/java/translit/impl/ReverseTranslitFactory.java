@@ -7,11 +7,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
-public class ReverseFromFileTranslitFactory implements TranslitFactory {
+public class ReverseTranslitFactory implements TranslitFactory {
 
     private final Path path;
 
-    public ReverseFromFileTranslitFactory(Path path) {
+    public ReverseTranslitFactory(Path path) {
         this.path = path;
     }
 
@@ -20,16 +20,16 @@ public class ReverseFromFileTranslitFactory implements TranslitFactory {
         Files.readAllLines(path).stream().forEach(line -> {
             String key = line.split("=")[0];
             List<String> value = new ArrayList<>();
-            for(String s : line.split("=")[1].split(",")) value.add(s);
+            for (String s : line.split("=")[1].split(",")) value.add(s);
             map.put(key, value);
         });
         final Map<String, List<String>> reverseMap = new HashMap<>();
-        for(String key : map.keySet()) {
-            for(String value : map.get(key)) {
-                if(!reverseMap.containsKey(value)) {
+        for (String key : map.keySet()) {
+            for (String value : map.get(key)) {
+                if (!reverseMap.containsKey(value)) {
                     reverseMap.put(value, new ArrayList<>());
                 }
-                if(!reverseMap.get(value).contains(key)) {
+                if (!reverseMap.get(value).contains(key)) {
                     reverseMap.get(value).add(key);
                 }
             }
