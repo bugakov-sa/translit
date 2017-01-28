@@ -11,11 +11,16 @@ public class Main {
     public static void main(String[] args) throws Exception {
         final long startMillis = System.currentTimeMillis();
         System.out.println("Collecting stat...");
-        StatFactory statFactory = new SeqStatFactory(Paths.get(
+        StatFactory seqStatFactory = new SeqStatFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
                 "names.stats"
         ), 5);
+        StatFactory wordStatFactory = new WordStatFactory(Paths.get(
+                System.getProperty("user.dir"),
+                "data",
+                "names.stats"
+        ));
         TranslitFactory translitFactory = new DefaultTranslitFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
@@ -27,13 +32,13 @@ public class Main {
                 "translit.txt"
         ));
         ConverterFactory converterFactory = new DefaultConverterFactory(
-                statFactory,
-                translitFactory
+                seqStatFactory,
+                wordStatFactory, translitFactory
         );
         Converter converter = converterFactory.create();
         ConverterFactory reverseConverterFactory = new DefaultConverterFactory(
-                statFactory,
-                reverseTranslitFactory
+                seqStatFactory,
+                wordStatFactory, reverseTranslitFactory
         );
         Converter reverseConverter = reverseConverterFactory.create();
 

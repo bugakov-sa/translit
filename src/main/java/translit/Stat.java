@@ -1,5 +1,5 @@
 package translit;
 
 public interface Stat {
-    long freq(String s);
+    Long freq(String s);
 }

@@ -33,7 +33,7 @@ public class SeqStatFactory implements StatFactory {
         });
         return s -> {
             if (accumulators.size() < s.length()) {
-                return -1;
+                return -1L;
             }
             return accumulators.get(s.length() - 1).getStat().getOrDefault(s, 0L);
         };

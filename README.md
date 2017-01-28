@@ -1,9 +1,12 @@
 # translit
 
+Запускал с опциями -Xmx1g -Xms1g
+Примеры неизвестных фамилий: фробениус, мандельброт, гринспен
+
 Вывод программы:
 
 Collecting stat...
-Stat collected during 40607 millis
+Stat collected during 53649 millis
 Translating words...
 
 владимир
@@ -52,11 +55,11 @@ Translating words...
 
 энтони
 [entoni]
-[ентоний]
+[энтони]
 
 джульетта
-[djulietta]
-[дюлетта]
+[dzhulyetta]
+[джулиетта]
 
 нассим
 [nassim]
@@ -72,7 +75,7 @@ Translating words...
 
 йозеф
 [joseph]
-[жосеф]
+[йозеф]
 
 юрий
 [yury]
@@ -91,11 +94,11 @@ Translating words...
 [манделброт]
 
 коши
-[koshi]
-[коший]
+[koshy]
+[коши]
 
 холмс
-[cholms]
+[holms]
 [холмс]
 
 ватсон
@@ -104,7 +107,7 @@ Translating words...
 
 али
 [ali]
-[алий]
+[али]
 
 иванов
 [ivanov]
@@ -123,15 +126,15 @@ Translating words...
 [пушкин]
 
 рюрикович
-[rurikovich]
-[рурикович]
+[ryurikovich]
+[рюрикович]
 
 смит
 [smit]
 [смит]
 
 святослав
-[svatoslav]
+[svyatoslav]
 [святослав]
 
 сара
@@ -139,27 +142,27 @@ Translating words...
 [сара]
 
 лариса
-[larissa]
+[larisa]
 [лариса]
 
 иннокентий
-[inenocenti]
+[innokenty]
 [иннокентий]
 
 фридрих
-[fridrich]
-[фрийдрич]
+[fridrikh]
+[фридрих]
 
 хайзенберг
-[hasenberg]
-[хасенберг]
+[hazenberg]
+[хазенберг]
 
 сэм
-[ssem]
-[сем]
+[sem]
+[сэм]
 
 курт
-[court]
+[kurt]
 [курт]
 
 робин
@@ -167,39 +170,39 @@ Translating words...
 [робин]
 
 жанна
-[janna]
+[zhanna]
 [жанна]
 
 бернанке
-[bernance]
-[бернанце]
+[bernanke]
+[бернанке]
 
 толстой
-[tolsto]
-[толсто]
+[tolstoy]
+[толстой]
 
 тухачевский
-[tuhachevsky]
+[tukhachevsky]
 [тухачевский]
 
 гудериан
 [guderian]
-[гдерийан]
+[гудериан]
 
 берия
 [beria]
 [берия]
 
 джонсон
-[gonson]
-[гонсон]
+[dzhonson]
+[джонсон]
 
 ли
-[ly]
-[лий]
+[li]
+[ли]
 
 флин
-[fline]
+[flin]
 [флин]
 
 густаво
@@ -211,8 +214,8 @@ Translating words...
 [гринесспен]
 
 рафаэль
-[raphael]
-[рафаэл]
+[rafael]
+[рафаел]
 
 отто
 [otto]
@@ -223,7 +226,7 @@ Translating words...
 [колт]
 
 саймонс
-[samones]
+[samons]
 [самонс]
 
 роберт
@@ -231,7 +234,7 @@ Translating words...
 [роберт]
 
 ниро
-[neiro]
+[niro]
 [ниро]
 
 ксения
@@ -247,15 +250,15 @@ Translating words...
 [фробенийус]
 
 евклид
-[jeffclid]
-[ьевклийд]
+[evklid]
+[эвклид]
 
 пифагор
 [pifagor]
 [пифагор]
 
 моцарт
-[mocart]
-[мокарт]
+[mozart]
+[моцарт]
 
-63 words translated during 1061 millis
+63 words translated during 2558 millis

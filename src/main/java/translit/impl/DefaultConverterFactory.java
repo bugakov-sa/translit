@@ -7,15 +7,21 @@ import translit.TranslitFactory;
 
 public class DefaultConverterFactory implements ConverterFactory {
 
-    private final StatFactory statFactory;
+    private final StatFactory seqStatFactory;
+    private final StatFactory wordStatFactory;
     private final TranslitFactory translitFactory;
 
-    public DefaultConverterFactory(StatFactory statFactory, TranslitFactory translitFactory) {
-        this.statFactory = statFactory;
+    public DefaultConverterFactory(
+            StatFactory seqStatFactory,
+            StatFactory wordStatFactory,
+            TranslitFactory translitFactory
+    ) {
+        this.seqStatFactory = seqStatFactory;
+        this.wordStatFactory = wordStatFactory;
         this.translitFactory = translitFactory;
     }
 
     public Converter create() throws Exception {
-        return new DefaultConverter(statFactory.create(), translitFactory.create());
+        return new DefaultConverter(seqStatFactory.create(), wordStatFactory.create(), translitFactory.create());
     }
 }
