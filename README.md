@@ -2,7 +2,10 @@
 
 Вывод программы:
 
-Stat collected during 40871 millis
+Collecting stat...
+Stat collected during 41365 millis
+Translating words...
+
 владимир
 [vladimir]
 [владимир]
@@ -219,4 +222,24 @@ Stat collected during 40871 millis
 [colt]
 [колт]
 
-54 converted during 824 millis
+саймонс
+[samones]
+[самонс]
+
+роберт
+[robert]
+[роберт]
+
+ниро
+[neiro]
+[ниро]
+
+ксения
+[ksenia]
+[ксения]
+
+ким
+[kim]
+[ким]
+
+59 words translated during 863 millis

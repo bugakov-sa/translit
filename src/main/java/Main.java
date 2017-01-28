@@ -10,6 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws Exception {
         final long startMillis = System.currentTimeMillis();
+        System.out.println("Collecting stat...");
         StatFactory statFactory = new SeqStatFactory(Paths.get(
                 System.getProperty("user.dir"),
                 "data",
@@ -37,6 +38,8 @@ public class Main {
         Converter reverseConverter = reverseConverterFactory.create();
 
         System.out.println("Stat collected during " + (System.currentTimeMillis() - startMillis) + " millis");
+        System.out.println("Translating words...");
+        System.out.println();
         final long startMillis2 = System.currentTimeMillis();
         String[] words = {
             "владимир",
@@ -92,7 +95,12 @@ public class Main {
                 "гринспен",
                 "рафаэль",
                 "отто",
-                "кольт"
+                "кольт",
+                "саймонс",
+                "роберт",
+                "ниро",
+                "ксения",
+                "ким"
         };
         for(String word : words) {
             List<String> list = converter.convert(word);
@@ -104,6 +112,6 @@ public class Main {
             System.out.println();
         }
         long convertionMillis = (System.currentTimeMillis() - startMillis2);
-        System.out.println(words.length + " converted during " + convertionMillis + " millis");
+        System.out.println(words.length + " words translated during " + convertionMillis + " millis");
     }
 }
