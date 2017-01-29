@@ -3,6 +3,9 @@ package translit.impl;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Считает частоты употребления последовательностей символов длиной seqLength
+ */
 public class StatAccumulator {
 
     private final Map<String, Long> stat = new HashMap<>();
@@ -15,11 +18,11 @@ public class StatAccumulator {
     public void add(String word, long freq) {
         if(word.length() >= seqLength) {
             for(int i = 0; i < word.length() - seqLength + 1; i++) {
-                String word3 = word.substring(i, i + seqLength);
-                if(!stat.containsKey(word3)) {
-                    stat.put(word3, 0L);
+                String seq = word.substring(i, i + seqLength);
+                if(!stat.containsKey(seq)) {
+                    stat.put(seq, 0L);
                 }
-                stat.put(word3, stat.get(word3) + freq);
+                stat.put(seq, stat.get(seq) + freq);
             }
         }
     }

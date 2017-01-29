@@ -8,6 +8,10 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Считает частоты употребления последовательностей символов разной длины.
+ * До maxSeqLength включительно.
+ */
 public class SeqStatFactory implements StatFactory {
 
     private final Path path;

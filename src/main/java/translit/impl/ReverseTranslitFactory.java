@@ -7,6 +7,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
+/**
+ * Составление обратного словаря транслитераций на основе прямого слова в файле.
+ * Если в файле словарь для перевода русских символов в английские, то
+ * обратный словарь переводит английские символы в русские.
+ */
 public class ReverseTranslitFactory implements TranslitFactory {
 
     private final Path path;

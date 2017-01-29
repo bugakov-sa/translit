@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
 
+/**
+ * Чтение словаря транслитераций из файла
+ */
 public class DefaultTranslitFactory implements TranslitFactory {
 
     private final Path path;

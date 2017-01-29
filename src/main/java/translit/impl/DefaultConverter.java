@@ -45,6 +45,9 @@ public class DefaultConverter implements Converter {
         return c * c * c * avgFreq(tl2, 5) + c * c * avgFreq(tl2, 4) + c * avgFreq(tl2, 3) + avgFreq(tl2, 2);
     }
 
+    /**
+     * Вычисляет среднюю частоту встречаемости подстрок строки tl длиной seqLength
+     */
     private Double avgFreq(String tl, int seqLength) {
         if (tl.length() >= seqLength) {
             int n = tl.length() - seqLength + 1;

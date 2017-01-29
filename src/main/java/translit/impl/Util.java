@@ -9,8 +9,14 @@ import java.util.List;
 
 public class Util {
 
+    /**
+     * С помощью маркера конца слова можно заложить в подстроку информацию о том, является ли эта подстрока окончанием.
+     */
     public static final String END_CHAR = "#";
 
+    /**
+     * Вычисляет все возможные транслитерации слова word на основе словаря транслитераций translit
+     */
     public static List<String> translations(String word, Translit translit) {
         return translations("", word, translit);
     }
